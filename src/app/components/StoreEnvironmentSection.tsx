@@ -13,11 +13,11 @@ export function StoreEnvironmentSection() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-6 py-2 mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-full px-6 py-2.5 mb-6 section-badge">
             <Building2 className="w-5 h-5 text-[#D4AF37]" />
-            <span className="text-sm text-[#D4AF37] font-semibold">门店环境</span>
+            <span className="text-sm text-[#D4AF37] font-semibold tracking-wide">门店环境</span>
           </div>
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             专业施工场地 · <span className="text-[#D4AF37]">V-KOOL官方形象店</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -28,7 +28,7 @@ export function StoreEnvironmentSection() {
         {/* Environment Gallery */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Store Exterior */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#1a1a1a] to-black border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-2xl card-premium transition-all duration-500">
             <div className="aspect-[4/3] overflow-hidden">
               <img
                 src={storeFrontExterior}
@@ -57,7 +57,7 @@ export function StoreEnvironmentSection() {
           </div>
 
           {/* Product Display Wall */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#1a1a1a] to-black border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-2xl card-premium transition-all duration-500">
             <div className="aspect-[4/3] overflow-hidden">
               <img
                 src={productDisplayWall}
@@ -85,7 +85,7 @@ export function StoreEnvironmentSection() {
           </div>
 
           {/* Customer Reception Area */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#1a1a1a] to-black border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-2xl card-premium transition-all duration-500">
             <div className="aspect-[4/3] overflow-hidden">
               <img
                 src={customerReceptionArea}
@@ -113,7 +113,7 @@ export function StoreEnvironmentSection() {
           </div>
 
           {/* Reception Desk & Award Wall */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#1a1a1a] to-black border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-2xl card-premium transition-all duration-500">
             <div className="aspect-[4/3] overflow-hidden">
               <img
                 src={receptionDeskArea}
@@ -141,7 +141,7 @@ export function StoreEnvironmentSection() {
           </div>
 
           {/* Anti-Counterfeit Education Display */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#1a1a1a] to-black border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-2xl card-premium transition-all duration-500">
             <div className="aspect-[4/3] overflow-hidden">
               <img
                 src={antiCounterfeitDisplay}
@@ -169,7 +169,7 @@ export function StoreEnvironmentSection() {
           </div>
 
           {/* Quality Assurance & Warranty Display */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#1a1a1a] to-black border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all duration-300">
+          <div className="group relative overflow-hidden rounded-2xl card-premium transition-all duration-500">
             <div className="aspect-[4/3] overflow-hidden">
               <img
                 src={qualityAssuranceDisplay}

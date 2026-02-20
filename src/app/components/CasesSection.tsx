@@ -165,7 +165,7 @@ export function CasesSection() {
 
   if (loading) {
     return (
-      <section id="cases" className="py-20 bg-[#0a0a0a]">
+      <section id="cases" className="py-20 bg-[#0a0a0a] scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-center py-20">
             <div className="text-white">加载案例中...</div>
@@ -176,10 +176,10 @@ export function CasesSection() {
   }
 
   return (
-    <section id="cases" className="py-20 bg-[#0a0a0a] overflow-hidden">
+    <section id="cases" className="py-20 bg-[#0a0a0a] overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 mb-16">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             <span className="text-[#D4AF37]">施工</span>案例展示
           </h2>
           <p className="text-gray-400">真实案例，品质保证 · V-KOOL官方授权门店</p>
@@ -196,19 +196,20 @@ export function CasesSection() {
 
         {/* 滚动容器 */}
         <div
-          className="flex gap-6 animate-infinite-scroll"
+          className="flex gap-6 animate-infinite-scroll [animation-duration:50s]"
         >
           {displayCases.map((caseItem, index) => (
             <div
               key={`${caseItem.id}-${index}`}
-              className="flex-shrink-0 w-[380px] group bg-black/60 border border-[#D4AF37]/30 rounded-2xl overflow-hidden hover:border-[#D4AF37] transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/10"
+              className="flex-shrink-0 w-[380px] group card-premium rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-[#D4AF37]/20"
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden bg-black">
+              <div className="relative h-64 overflow-hidden bg-black/80">
+                <div className="absolute inset-0 image-overlay-gradient z-[1] pointer-events-none" />
                 <ImageWithFallback
                   src={caseItem.image_url}
                   alt={caseItem.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-0"
                   onLoad={() => {
                     console.log(`[CasesSection] ✅ 图片加载成功: ${caseItem.title}`, caseItem.image_url);
                   }}
@@ -224,7 +225,7 @@ export function CasesSection() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full">
+                  <span className="text-xs font-semibold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3 py-1 rounded-full">
                     {caseItem.film_type}
                   </span>
                 </div>
@@ -238,8 +239,11 @@ export function CasesSection() {
                   车型：<span className="text-slate-300">{caseItem.car_model}</span>
                 </div>
 
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-3">
+                  <span className="text-sm text-[#D4AF37] font-medium">查看详情 →</span>
+                </div>
                 {/* Specs */}
-                <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-800">
+                <div className="grid grid-cols-3 gap-2 pt-4 border-t border-slate-800/80">
                   <div className="text-center">
                     <div className="text-xs text-slate-500 mb-1">透光率</div>
                     <div className="text-sm font-semibold text-white">
@@ -267,7 +271,19 @@ export function CasesSection() {
 
       {/* 提示文字 */}
       <div className="text-center mt-12">
-        <p className="text-slate-500 text-sm">鼠标悬停暂停滚动</p>
+        <p className="text-slate-500 text-sm">鼠标悬停暂停滚动 · 点击下方按钮手动暂停/继续</p>
+        <button
+          onClick={() => {
+            const el = document.querySelector('.animate-infinite-scroll');
+            if (el) {
+              const style = (el as HTMLElement).style;
+              style.animationPlayState = style.animationPlayState === 'paused' ? 'running' : 'paused';
+            }
+          }}
+          className="mt-2 text-[#D4AF37] text-xs hover:underline"
+        >
+          暂停/继续
+        </button>
       </div>
     </section>
   );

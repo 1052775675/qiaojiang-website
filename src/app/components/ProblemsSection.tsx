@@ -90,18 +90,18 @@ export function ProblemsSection() {
   ];
 
   return (
-    <section id="problems" className="py-32 bg-black">
+    <section id="problems" className="py-32 bg-black scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-full px-6 py-2 mb-4">
-            <AlertTriangle className="w-5 h-5 text-red-500" />
-            <span className="text-sm text-red-500 font-semibold">车主痛点</span>
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-full px-6 py-2.5 mb-6 section-badge">
+            <AlertTriangle className="w-5 h-5 text-[#D4AF37]/90" />
+            <span className="text-sm text-[#D4AF37] font-semibold tracking-wide">车主痛点</span>
           </div>
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             开原车主<span className="text-[#D4AF37]">5大贴膜痛点</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
             基于13年服务经验，我们总结了开原市车主最关心的问题，并提供数据化解决方案
           </p>
         </div>
@@ -113,14 +113,14 @@ export function ProblemsSection() {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#0a0a0a] to-black border-2 border-[#D4AF37]/20 rounded-2xl p-8 hover:border-[#D4AF37]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#D4AF37]/10"
+                className="card-premium rounded-2xl p-8 transition-all duration-500"
               >
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Left: Problem Definition */}
                   <div>
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="w-14 h-14 bg-red-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-7 h-7 text-red-500" />
+                      <div className="w-14 h-14 bg-[#D4AF37]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-7 h-7 text-[#D4AF37]" />
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-white mb-2">
@@ -134,13 +134,13 @@ export function ProblemsSection() {
 
                     <div className="mb-6">
                       <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                        <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                        <span className="w-2 h-2 bg-[#D4AF37]/70 rounded-full"></span>
                         后果分析
                       </h4>
                       <ul className="space-y-2">
                         {problem.consequences.map((item, i) => (
                           <li key={i} className="text-gray-400 text-sm flex items-start gap-2">
-                            <span className="text-red-500 mt-1">▸</span>
+                            <span className="text-[#D4AF37]/80 mt-1">▸</span>
                             {item}
                           </li>
                         ))}
@@ -149,7 +149,7 @@ export function ProblemsSection() {
                   </div>
 
                   {/* Right: Solution & Evidence */}
-                  <div className="bg-gradient-to-br from-[#D4AF37]/5 to-transparent border border-[#D4AF37]/30 rounded-xl p-6">
+                  <div className="bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-xl p-6">
                     <div className="flex items-center gap-2 mb-4">
                       <Award className="w-6 h-6 text-[#D4AF37]" />
                       <h4 className="text-[#D4AF37] font-bold text-lg">
@@ -189,8 +189,8 @@ export function ProblemsSection() {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-[#D4AF37]/10 via-[#D4AF37]/5 to-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-2xl p-8 inline-block">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="card-premium rounded-2xl p-8 inline-block">
+            <h3 className="font-serif text-2xl font-semibold text-white mb-4 tracking-tight">
               以上问题，<span className="text-[#D4AF37]">V-KOOL一站式解决</span>
             </h3>
             <div className="flex flex-wrap justify-center gap-6 text-sm">

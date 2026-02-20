@@ -41,12 +41,19 @@
   --sidebar-border: rgba(212, 175, 55, 0.2);
   --sidebar-ring: #D4AF37;
   
-  /* V-KOOL 金色系列 */
+  /* V-KOOL 金色系列 - 高级质感 */
   --vkool-gold: #D4AF37;
   --vkool-gold-dark: #B8942C;
   --vkool-gold-light: #E5C158;
+  --vkool-gold-muted: rgba(212, 175, 55, 0.4);
   --vkool-black: #0a0a0a;
-  --vkool-gray: #2a2a2a;
+  --vkool-gray: #1a1a1a;
+  --vkool-card: rgba(26, 26, 26, 0.6);
+  /* 高端阴影 */
+  --shadow-premium: 0 4px 24px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.08);
+  --shadow-card-hover: 0 24px 48px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(212, 175, 55, 0.12);
+  --font-serif: 'Noto Serif SC', serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
 }
 
 .dark {
@@ -133,7 +140,12 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
   }
 
   /**
@@ -211,4 +223,74 @@
   .backdrop-blur-light {
     backdrop-filter: blur(4px);
   }
+}
+
+/* 无障碍：尊重用户减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 全局：跳过链接用于无障碍导航 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  border-radius: 0 0 0.25rem 0;
+  font-weight: 500;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* 高端区块标题 */
+.section-badge {
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* 高端卡片 - 玻璃质感 */
+.card-premium {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(10, 10, 10, 0.9) 100%);
+  box-shadow: var(--shadow-premium);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  backdrop-filter: blur(12px);
+}
+.card-premium:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(212, 175, 55, 0.25);
+  transform: translateY(-4px);
+}
+
+/* 图片渐变遮罩 */
+.image-overlay-gradient {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+}
+
+/* 区块过渡线 */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+}
+
+/* 高端 Hero 纹理 */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }

@@ -1,8 +1,21 @@
 import { Shield, Thermometer, Sun } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
+
+const ROTATING_TAGLINES = [
+  '13年专业服务',
+  '10000+台车辆施工经验',
+  '返工率<1%',
+  '年检通过率100%',
+];
 
 export function HeroSection() {
+  const [taglineIndex, setTaglineIndex] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setTaglineIndex((i) => (i + 1) % ROTATING_TAGLINES.length), 3000);
+    return () => clearInterval(t);
+  }, []);
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -21,18 +34,19 @@ export function HeroSection() {
         {/* Base gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-black"></div>
         
-        {/* Luxury car image overlay */}
+        {/* Luxury car image overlay - parallax */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center opacity-25 max-md:opacity-20"
           style={{
             backgroundImage: `url(${heroBackgroundUrl})`,
             backgroundPosition: 'center',
-            backgroundSize: 'cover'
+            backgroundSize: 'cover',
+            backgroundAttachment: 'scroll'
           }}
         ></div>
         
         {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/70"></div>
         
         {/* Premium gold accent pattern */}
         <div 
@@ -56,7 +70,9 @@ export function HeroSection() {
         ></div>
         
         {/* Top gold accent bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-60"></div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-transparent"></div>
+        {/* 高端纹理 */}
+        <div className="hero-grain" aria-hidden />
       </div>
 
       {/* Content */}
@@ -65,20 +81,20 @@ export function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-4 py-2 mb-6"
+          className="inline-flex items-center gap-2 bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-full px-5 py-2.5 mb-8 section-badge"
         >
           <Shield className="w-4 h-4 text-[#D4AF37]" />
-          <span className="text-sm text-[#D4AF37]">V-KOOL官方授权施工店 · 授权编号：VKWF0286</span>
+          <span className="text-sm text-[#D4AF37]/90 tracking-wide">V-KOOL官方授权施工店 · 授权编号：VKWF0286</span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6"
+          className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
         >
           <span className="text-[#D4AF37]">开原市巧匠美车工作室</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#E5C158] mt-2">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#E5C158] to-[#D4AF37] mt-3">
             V-KOOL威固贴膜 · 专业汽车美容
           </span>
         </motion.h1>
@@ -87,7 +103,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-xl text-gray-300 mb-4"
+          className="text-lg md:text-xl text-gray-400 mb-4 tracking-wide"
         >
           汽车装饰 · 美容养护 · 隔热贴膜 · 漆面保护
         </motion.p>
@@ -96,9 +112,10 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto"
+          className="text-base md:text-lg text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed min-h-[2rem]"
         >
-          <span className="text-[#D4AF37] font-semibold">13年专业服务</span> · 10000+台车辆施工经验 · 返工率&lt;1% · 年检通过率100%
+          <span className="text-[#D4AF37] font-semibold">{ROTATING_TAGLINES[taglineIndex]}</span>
+          <span className="text-gray-400"> · 专业汽车贴膜 · V-KOOL官方授权</span>
         </motion.p>
 
         {/* Key metrics */}
@@ -108,20 +125,20 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10"
         >
-          <div className="bg-black/70 border border-[#D4AF37]/30 rounded-2xl p-6 hover:border-[#D4AF37]/60 hover:-translate-y-1 transition-all duration-300">
+          <div className="card-premium rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_rgba(212,175,55,0.2)]">
             <Thermometer className="w-10 h-10 text-[#D4AF37] mx-auto mb-3" />
-            <div className="text-2xl font-bold text-white mb-1">95%+</div>
-            <div className="text-sm text-gray-300">红外线阻隔率</div>
+            <div className="font-serif text-2xl font-semibold text-white mb-1">95%+</div>
+            <div className="text-sm text-gray-400">红外线阻隔率</div>
           </div>
-          <div className="bg-black/70 border border-[#D4AF37]/30 rounded-2xl p-6 hover:border-[#D4AF37]/60 hover:-translate-y-1 transition-all duration-300">
+          <div className="card-premium rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_rgba(212,175,55,0.2)]">
             <Sun className="w-10 h-10 text-[#E5C158] mx-auto mb-3" />
-            <div className="text-2xl font-bold text-white mb-1">70%+</div>
-            <div className="text-sm text-gray-300">可见光透过率</div>
+            <div className="font-serif text-2xl font-semibold text-white mb-1">70%+</div>
+            <div className="text-sm text-gray-400">可见光透过率</div>
           </div>
-          <div className="bg-black/70 border border-[#D4AF37]/30 rounded-2xl p-6 hover:border-[#D4AF37]/60 hover:-translate-y-1 transition-all duration-300">
+          <div className="card-premium rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_rgba(212,175,55,0.2)]">
             <Shield className="w-10 h-10 text-[#B8942C] mx-auto mb-3" />
-            <div className="text-3xl font-bold text-[#D4AF37] mb-1">12年</div>
-            <div className="text-sm text-gray-300">质量保证</div>
+            <div className="font-serif text-2xl font-semibold text-[#D4AF37] mb-1">12年</div>
+            <div className="text-sm text-gray-400">质量保证</div>
           </div>
         </motion.div>
 
@@ -132,10 +149,10 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#D4AF37] to-[#B8942C] hover:from-[#E5C158] hover:to-[#D4AF37] text-black px-8 font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 w-full"
+              className="font-serif bg-gradient-to-r from-[#D4AF37] to-[#B8942C] hover:from-[#E5C158] hover:to-[#D4AF37] text-black px-8 font-semibold shadow-[0_4px_24px_-4px_rgba(212,175,55,0.4)] hover:shadow-[0_8px_32px_-4px_rgba(212,175,55,0.5)] ring-2 ring-[#D4AF37]/30 hover:ring-[#D4AF37]/50 transition-all duration-500 w-full focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               onClick={scrollToContact}
             >
               获取专业诊断
@@ -145,7 +162,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#D4AF37]/50 text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:border-[#D4AF37] transition-all duration-300 w-full"
+              className="font-serif border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37]/5 hover:border-[#D4AF37]/70 transition-all duration-500 w-full focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               onClick={scrollToSpecs}
             >
               查看技术参数

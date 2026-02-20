@@ -63,10 +63,10 @@ const ppfProducts: PPFProduct[] = [
 
 export function PPFSection() {
   return (
-    <section id="ppf" className="py-20 bg-black">
+    <section id="ppf" className="py-20 bg-black scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             <span className="text-[#D4AF37]">漆面保护膜</span> (PPF)
           </h2>
           <p className="text-gray-400 text-lg">

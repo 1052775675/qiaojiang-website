@@ -40,7 +40,7 @@ export function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-32 bg-gradient-to-b from-[#0a0a0a] to-black">
+    <section id="team" className="py-32 bg-gradient-to-b from-[#0a0a0a] to-black scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -50,11 +50,11 @@ export function TeamSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-6 py-2 mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-full px-6 py-2.5 mb-6 section-badge">
             <Users className="w-5 h-5 text-[#D4AF37]" />
-            <span className="text-sm text-[#D4AF37] font-semibold">专业团队</span>
+            <span className="text-sm text-[#D4AF37] font-semibold tracking-wide">专业团队</span>
           </div>
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             <span className="text-[#D4AF37]">巧匠美车</span>专业团队
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">

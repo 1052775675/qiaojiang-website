@@ -13,27 +13,37 @@ import { CasesSection } from '../components/CasesSection';
 import { FAQSection } from '../components/FAQSection';
 import { ContactSection } from '../components/ContactSection';
 import { Footer } from '../components/Footer';
+import { FloatingCTA } from '../components/FloatingCTA';
 
 export function HomePage() {
   return (
     <>
+      <a href="#authorization" className="skip-link">
+        跳到主内容
+      </a>
       <ScrollProgress />
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-gradient-to-b from-black via-[#0a0a0a] to-black">
         <Navbar />
         <div className="pt-16">
           <HeroSection />
+          <hr className="section-divider border-0" />
           <AuthorizationSection />
+          <hr className="section-divider border-0" />
           <ProblemsSection />
+          <hr className="section-divider border-0" />
           <SpecsTable />
           <FilmGuideSection />
           <PPFSection />
           <StandardsSection />
-          <StoreEnvironmentSection />
           <TeamSection />
+          <StoreEnvironmentSection />
           <CasesSection />
+          <hr className="section-divider border-0" />
           <FAQSection />
+          <hr className="section-divider border-0" />
           <ContactSection />
           <Footer />
+          <FloatingCTA />
         </div>
       </div>
     </>

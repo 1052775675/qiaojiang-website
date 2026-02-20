@@ -159,10 +159,10 @@ const filmSpecs: FilmSpec[] = [
 
 export function SpecsTable() {
   return (
-    <section id="specs" className="py-32 bg-[#0a0a0a]">
+    <section id="specs" className="py-32 bg-[#0a0a0a] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             <span className="text-[#D4AF37]">窗膜</span>技术参数对比
           </h2>
           <p className="text-gray-400 text-lg">
@@ -171,7 +171,7 @@ export function SpecsTable() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full bg-black/60 border border-[#D4AF37]/30 rounded-2xl overflow-hidden">
+          <table className="w-full card-premium rounded-2xl overflow-hidden">
             <thead>
               <tr className="bg-gradient-to-r from-[#D4AF37]/20 to-[#B8942C]/20 border-b border-[#D4AF37]/30">
                 <th className="px-6 py-4 text-left text-sm font-semibold text-[#D4AF37]">

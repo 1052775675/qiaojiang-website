@@ -5,30 +5,31 @@ const windowFilmAuthorizationPlaque = "/pics/2.jpg";
 
 export function AuthorizationSection() {
   return (
-    <section id="authorization" className="py-20 bg-gradient-to-b from-black to-[#0a0a0a]">
+    <section id="authorization" className="py-20 bg-gradient-to-b from-black to-[#0a0a0a] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-6 py-2 mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-full px-6 py-2.5 mb-6 section-badge">
             <Shield className="w-5 h-5 text-[#D4AF37]" />
-            <span className="text-sm text-[#D4AF37] font-semibold">官方授权</span>
+            <span className="text-sm text-[#D4AF37] font-semibold tracking-wide">官方授权</span>
           </div>
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             <span className="text-[#D4AF37]">V-KOOL官方</span>授权认证
           </h2>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto mb-12">
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
             正品保障 · 全国联保 · 可官网验证授权编号 VKWF0286
           </p>
 
           {/* Authorization Plaques - 两个授权牌 */}
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
             {/* PPF漆面保护膜授权 */}
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-[#D4AF37]/30 rounded-2xl p-6">
+            <div className="card-premium rounded-2xl p-6 transition-all duration-500">
               <div className="aspect-[3/2] mb-4 flex items-center justify-center overflow-hidden rounded-xl">
                 <img
                   src={ppfAuthorizationPlaque}
                   alt="V-KOOL PPF漆面保护膜官方授权牌 - 授权编号VKWF0286"
                   className="w-full h-full object-contain rounded-xl"
+                  loading="lazy"
                 />
               </div>
               <div className="text-center">
@@ -37,12 +38,13 @@ export function AuthorizationSection() {
               </div>
             </div>
             {/* 窗膜授权经销商 */}
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 border border-[#D4AF37]/30 rounded-2xl p-6">
+            <div className="card-premium rounded-2xl p-6 transition-all duration-500">
               <div className="aspect-[3/2] mb-4 flex items-center justify-center overflow-hidden rounded-xl">
                 <img
                   src={windowFilmAuthorizationPlaque}
                   alt="V-KOOL窗膜官方授权经销商 - 授权编号VKWF0286"
                   className="w-full h-full object-contain rounded-xl"
+                  loading="lazy"
                 />
               </div>
               <div className="text-center">
@@ -54,8 +56,8 @@ export function AuthorizationSection() {
         </div>
 
         {/* Authorization Benefits */}
-        <div className="bg-gradient-to-r from-[#D4AF37]/10 via-[#D4AF37]/5 to-[#D4AF37]/10 border-2 border-[#D4AF37]/30 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">
+        <div className="card-premium rounded-2xl p-8">
+          <h3 className="font-serif text-2xl font-semibold text-white mb-6 text-center tracking-tight">
             为什么选择<span className="text-[#D4AF37]">官方授权门店</span>？
           </h3>
           
