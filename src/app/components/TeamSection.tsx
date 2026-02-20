@@ -50,10 +50,6 @@ export function TeamSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-full px-6 py-2.5 mb-6 section-badge">
-            <Users className="w-5 h-5 text-[#D4AF37]" />
-            <span className="text-sm text-[#D4AF37] font-semibold tracking-wide">专业团队</span>
-          </div>
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             <span className="text-[#D4AF37]">巧匠美车</span>专业团队
           </h2>
@@ -99,10 +95,6 @@ export function TeamSection() {
         {/* Awards and Certificates Section */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-6 py-2 mb-4">
-              <Trophy className="w-5 h-5 text-[#D4AF37]" />
-              <span className="text-sm text-[#D4AF37] font-semibold">荣誉资质</span>
-            </div>
             <h3 className="text-3xl font-bold text-white mb-3">
               <span className="text-[#D4AF37]">专业认证</span>与荣誉
             </h3>

@@ -9,10 +9,6 @@ export function AuthorizationSection() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-full px-6 py-2.5 mb-6 section-badge">
-            <Shield className="w-5 h-5 text-[#D4AF37]" />
-            <span className="text-sm text-[#D4AF37] font-semibold tracking-wide">官方授权</span>
-          </div>
           <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-4 tracking-tight">
             <span className="text-[#D4AF37]">V-KOOL官方</span>授权认证
           </h2>

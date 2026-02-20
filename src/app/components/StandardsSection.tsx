@@ -78,10 +78,6 @@ export function StandardsSection() {
         {/* 窗膜施工流程 */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-6 py-2 mb-4">
-              <CheckCircle className="w-5 h-5 text-[#D4AF37]" />
-              <span className="text-sm text-[#D4AF37] font-semibold">V-KOOL窗膜标准施工</span>
-            </div>
             <h3 className="text-3xl font-bold text-white mb-3">
               窗膜20步<span className="text-[#D4AF37]">精工</span>工艺
             </h3>
@@ -106,10 +102,6 @@ export function StandardsSection() {
         {/* 漆面保护膜施工流程 */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-full px-6 py-2 mb-4">
-              <Shield className="w-5 h-5 text-[#D4AF37]" />
-              <span className="text-sm text-[#D4AF37] font-semibold">V-KOOL漆面保护膜施工</span>
-            </div>
             <h3 className="text-3xl font-bold text-white mb-3">
               PPF<span className="text-[#D4AF37]">专业</span>施工流程
             </h3>
