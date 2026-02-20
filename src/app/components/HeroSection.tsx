@@ -24,8 +24,8 @@ export function HeroSection() {
     document.getElementById('specs')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // High-end luxury car background image
-  const heroBackgroundUrl = 'https://images.unsplash.com/photo-1720929680517-9c1ce16a9ed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBkZXRhaWwlMjBibGFjayUyMGdvbGQlMjByZWZsZWN0aW9ufGVufDF8fHx8MTc3MDk2OTU5N3ww&ixlib=rb-4.1.0&q=80&w=1080';
+  // 英伦风豪车背景 - 使用本地图片避免跨境访问/加载失败（原 Wikimedia 国内可能不可达）
+  const heroBackgroundUrl = '/pics/hero-bentley.jpg';
 
   return (
     <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-black">
@@ -34,9 +34,9 @@ export function HeroSection() {
         {/* Base gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-black"></div>
         
-        {/* Luxury car image overlay - parallax */}
+        {/* Luxury car image overlay - 提高透明度以便可见 */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-25 max-md:opacity-20"
+          className="absolute inset-0 bg-cover bg-center opacity-55 max-md:opacity-45"
           style={{
             backgroundImage: `url(${heroBackgroundUrl})`,
             backgroundPosition: 'center',
@@ -46,7 +46,7 @@ export function HeroSection() {
         ></div>
         
         {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/35"></div>
         
         {/* Premium gold accent pattern */}
         <div 
